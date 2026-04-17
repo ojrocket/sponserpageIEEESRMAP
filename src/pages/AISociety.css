@@ -1,0 +1,68 @@
+/* ══════════════════════════════════
+   AI Society Page Styles
+   ══════════════════════════════════ */
+@import './DarkPage.css';
+
+/* ── Neural mesh bg ────────────── */
+.neural-canvas { position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+.neural-node { position:absolute; width:4px; height:4px; background:#00C2FF; border-radius:50%; box-shadow:0 0 8px #00C2FF; animation:nodeGlow 3s ease-in-out infinite alternate; }
+@keyframes nodeGlow { 0%{opacity:0.2;transform:scale(1)} 100%{opacity:0.8;transform:scale(1.5)} }
+.neural-line { position:absolute; height:1px; background:linear-gradient(90deg,transparent,rgba(0,194,255,0.2),transparent); animation:lineTravel 4s ease-in-out infinite; }
+@keyframes lineTravel { 0%,100%{opacity:0.1} 50%{opacity:0.5} }
+
+/* ── Hero ──────────────────────── */
+.ai-hero { padding:100px 0 80px; position:relative; overflow:hidden; }
+.ai-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 25% 30%,rgba(0,194,255,0.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 70%,rgba(99,102,241,0.08) 0%,transparent 50%); z-index:0; }
+.ai-hero-content { position:relative; z-index:1; max-width:620px; flex:1; min-width:300px; }
+.ai-badge { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:rgba(0,194,255,0.1); border:1px solid rgba(0,194,255,0.2); border-radius:9999px; font-size:0.78rem; font-weight:600; color:#00C2FF; margin-bottom:24px; letter-spacing:0.04em; }
+.pulse-dot { width:8px; height:8px; background:#00C2FF; border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.ai-hero h1 { font-size:clamp(2.2rem,5vw,3.5rem); font-weight:900; line-height:1.1; margin-bottom:20px; letter-spacing:-0.03em; color:white; }
+.ai-subtitle { color:#94A3B8; font-size:1.05rem; line-height:1.6; margin-bottom:32px; }
+
+/* ── Brain orb ─────────────────── */
+.ai-hero-visual { flex:0.6; display:flex; justify-content:center; min-width:260px; position:relative; z-index:1; }
+.brain-orb { width:280px; height:280px; border-radius:50%; background:radial-gradient(circle at 40% 40%,rgba(0,194,255,0.15),transparent 60%); border:1px solid rgba(0,194,255,0.15); display:flex; align-items:center; justify-content:center; position:relative; animation:orbFloat 6s ease-in-out infinite; }
+@keyframes orbFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+.brain-orb-ring { position:absolute; inset:0; border-radius:50%; border:1px dashed rgba(0,194,255,0.12); }
+.brain-orb-ring.r1 { inset:20px; animation:spinSlow 20s linear infinite; }
+.brain-orb-ring.r2 { inset:50px; animation:spinSlow 15s linear infinite reverse; border-color:rgba(99,102,241,0.15); }
+@keyframes spinSlow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+.brain-icon { font-size:4rem; position:relative; z-index:1; filter:drop-shadow(0 0 20px rgba(0,194,255,0.4)); }
+
+/* ── Section badge ─────────────── */
+.section-badge-ai { display:inline-flex; padding:6px 14px; border-radius:9999px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px; background:rgba(0,194,255,0.1); color:#00C2FF; }
+
+/* ── Research cards ────────────── */
+.research-card { background:#1A1F2E; border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:32px; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); position:relative; overflow:hidden; }
+.research-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#00C2FF,transparent); opacity:0; transition:opacity 0.3s; }
+.research-card:hover { border-color:rgba(0,194,255,0.2); transform:translateY(-4px); box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+.research-card:hover::before { opacity:1; }
+.research-icon { width:48px; height:48px; border-radius:8px; background:rgba(0,194,255,0.1); display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:20px; }
+.research-card h3 { color:#F1F5F9; font-size:1.1rem; margin-bottom:8px; }
+.research-card p { color:#94A3B8; font-size:0.88rem; line-height:1.6; }
+.research-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+.research-tag { padding:4px 10px; background:rgba(0,194,255,0.06); border:1px solid rgba(0,194,255,0.12); border-radius:9999px; font-size:0.7rem; color:#94A3B8; font-weight:500; }
+
+/* ── Timeline ──────────────────── */
+.timeline { position:relative; padding-left:32px; }
+.timeline::before { content:''; position:absolute; left:7px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,#00C2FF,rgba(0,194,255,0.1)); }
+.timeline-item { position:relative; margin-bottom:32px; padding:20px 24px; background:#1A1F2E; border:1px solid rgba(255,255,255,0.06); border-radius:12px; transition:all 0.3s; }
+.timeline-item:hover { border-color:rgba(0,194,255,0.15); }
+.timeline-item::before { content:''; position:absolute; left:-29px; top:24px; width:12px; height:12px; border-radius:50%; background:#00C2FF; box-shadow:0 0 12px rgba(0,194,255,0.4); }
+.timeline-date { font-size:0.72rem; color:#00C2FF; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:6px; }
+.timeline-item h4 { color:#F1F5F9; font-size:1rem; margin-bottom:4px; }
+.timeline-item p { color:#94A3B8; font-size:0.85rem; }
+
+/* ── Publications ──────────────── */
+.publications-card { background:#1A1F2E; border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:28px; height:100%; }
+.publications-card h3 { color:#F1F5F9; margin-bottom:20px; font-size:1.1rem; }
+.pub-item { padding-bottom:16px; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.pub-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.pub-title { font-size:0.88rem; color:#E2E8F0; font-weight:500; margin-bottom:4px; }
+.pub-cite { font-size:0.75rem; color:#64748B; }
+
+/* ── CTA ───────────────────────── */
+.cta-section-ai { background:linear-gradient(135deg,rgba(0,194,255,0.08),rgba(99,102,241,0.08)); border:1px solid rgba(0,194,255,0.1); border-radius:16px; padding:60px 40px; text-align:center; }
+.cta-section-ai h2 { color:white; margin-bottom:12px; font-size:clamp(1.5rem,3vw,2rem); }
+.cta-section-ai p { color:#94A3B8; max-width:500px; margin:0 auto 32px; }

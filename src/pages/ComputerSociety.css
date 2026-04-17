@@ -1,0 +1,45 @@
+@import './DarkPage.css';
+
+.cs-hero { padding:100px 0 80px; position:relative; overflow:hidden; }
+.cs-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 20% 40%,rgba(99,102,241,0.12) 0%,transparent 50%),radial-gradient(ellipse at 80% 60%,rgba(139,92,246,0.08) 0%,transparent 50%); }
+.cs-badge { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.2); border-radius:9999px; font-size:0.78rem; font-weight:600; color:#6366F1; margin-bottom:24px; }
+.text-gradient-purple { background:linear-gradient(135deg,#6366F1,#8B5CF6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.btn-purple-lg { display:inline-flex; align-items:center; padding:14px 32px; background:linear-gradient(135deg,#6366F1,#4F46E5); color:white; border-radius:8px; font-weight:600; font-size:0.925rem; text-decoration:none; transition:all 0.3s; box-shadow:0 4px 14px rgba(99,102,241,0.3); }
+.btn-purple-lg:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(99,102,241,0.45); }
+.section-badge-cs { display:inline-flex; padding:6px 14px; border-radius:9999px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px; background:rgba(99,102,241,0.1); color:#6366F1; }
+
+/* Matrix rain */
+.matrix-rain { position:fixed; inset:0; overflow:hidden; pointer-events:none; opacity:0.12; z-index:0; }
+.matrix-col { position:absolute; top:-100%; font-family:'JetBrains Mono',monospace; font-size:14px; color:#6366F1; writing-mode:vertical-rl; animation:matrixFall linear infinite; letter-spacing:8px; }
+@keyframes matrixFall { 0%{transform:translateY(-100%)} 100%{transform:translateY(200vh)} }
+
+/* Terminal */
+.terminal-card { background:#0D1117; border:1px solid rgba(99,102,241,0.15); border-radius:12px; overflow:hidden; font-family:'JetBrains Mono',monospace; max-width:440px; width:100%; }
+.terminal-header { background:#161B22; padding:12px 16px; display:flex; align-items:center; gap:8px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.tdot { width:12px; height:12px; border-radius:50%; }
+.terminal-title { color:#484F58; font-size:0.72rem; margin-left:8px; }
+.terminal-body { padding:20px; font-size:0.82rem; line-height:1.8; color:#8B949E; }
+.terminal-body .prompt { color:#6366F1; }
+.terminal-body .cmd { color:#E6EDF3; }
+.terminal-body .output { color:#7EE787; }
+.terminal-body .comment { color:#484F58; }
+.cursor-blink { display:inline-block; width:8px; height:16px; background:#6366F1; animation:cursorBlink 1s step-end infinite; vertical-align:middle; margin-left:4px; }
+@keyframes cursorBlink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+
+/* Domain cards */
+.domain-card { background:#1A1F2E; border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:32px; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); }
+.domain-card:hover { border-color:rgba(99,102,241,0.2); transform:translateY(-4px); box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+.domain-icon { width:48px; height:48px; border-radius:8px; background:rgba(99,102,241,0.1); display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:20px; }
+.domain-card h3 { color:#F1F5F9; font-size:1.1rem; margin-bottom:8px; }
+.domain-card p { color:#94A3B8; font-size:0.88rem; line-height:1.6; }
+
+/* Tech grid */
+.tech-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:16px; }
+.tech-item { background:#1A1F2E; border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:20px 16px; text-align:center; transition:all 0.3s; }
+.tech-item:hover { border-color:rgba(99,102,241,0.25); transform:translateY(-2px); }
+.tech-emoji { font-size:1.8rem; margin-bottom:8px; }
+.tech-name { font-size:0.78rem; color:#94A3B8; font-weight:500; }
+
+.cta-section-cs { background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08)); border:1px solid rgba(99,102,241,0.1); border-radius:16px; padding:60px 40px; text-align:center; }
+.cta-section-cs h2 { color:white; margin-bottom:12px; font-size:clamp(1.5rem,3vw,2rem); }
+.cta-section-cs p { color:#94A3B8; max-width:500px; margin:0 auto 32px; }
